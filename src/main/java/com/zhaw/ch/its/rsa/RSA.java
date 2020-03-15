@@ -10,6 +10,10 @@ public interface RSA {
 
     BigInteger decrypt(BigInteger cipher) throws BadMessageException, OperationNotSupportedException;
 
+    BigInteger sign(BigInteger message) throws BadMessageException, OperationNotSupportedException;
+
+    boolean verify(BigInteger message, BigInteger signature) throws BadMessageException;
+
     void save(ObjectOutputStream os) throws IOException, OperationNotSupportedException;
 
     void savePublic(ObjectOutputStream os) throws IOException;

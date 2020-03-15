@@ -77,6 +77,17 @@ public class RSAImpl implements RSA {
     }
 
     @Override
+    public BigInteger sign(BigInteger message) throws BadMessageException, OperationNotSupportedException {
+        return decrypt(message);
+    }
+
+    @Override
+    public boolean verify(BigInteger message, BigInteger signature) throws BadMessageException {
+        BigInteger messageToVerify = encrypt(signature);
+        return messageToVerify.equals(message);
+    }
+
+    @Override
     public void save(ObjectOutputStream os) throws IOException, OperationNotSupportedException {
         privateKeyPresenceCheck();
         os.writeObject(keyPair);
