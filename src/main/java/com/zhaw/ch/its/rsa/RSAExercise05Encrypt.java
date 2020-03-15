@@ -4,13 +4,13 @@ import java.io.*;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 
-public class RSARunner {
+public class RSAExercise05Encrypt {
 
     public static void main(String[] args) {
         String plainText = String.join(" ", args);
 
         try {
-            new RSARunner().runRSATestEx05(plainText);
+            new RSAExercise05Encrypt().runRSATestEx05(plainText);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (OperationNotSupportedException e) {
