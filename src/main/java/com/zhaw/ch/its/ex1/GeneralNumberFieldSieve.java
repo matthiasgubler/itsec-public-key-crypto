@@ -3,12 +3,10 @@ package com.zhaw.ch.its.ex1;
 public class GeneralNumberFieldSieve {
 
     public static double sieve(double b) {
-        return Math.exp(1.92 * Math.pow(b, 1 / 3) * Math.pow(Math.log(b), 2 / 3));
+        double fac1 = Math.pow(b, (1d / 3d));
+        double ln_b = Math.log(b);
+        double fac2 = Math.pow(ln_b, (2d / 3d));
+        return Math.exp(1.92 * fac1 * fac2);
     }
 
-    public static void main(String[] args) {
-        double res = GeneralNumberFieldSieve.sieve(512);
-        System.out.println(res);
-        System.out.println(Math.log(res) / Math.log(2));
-    }
 }
